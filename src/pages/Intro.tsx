@@ -45,7 +45,7 @@ export default function Intro() {
     return (
         <IntroBackground id='intro'>
             <h1>Landon DeCoito</h1>
-            <h3>Full-Stack Web Developer</h3>
+            <h2>Full-Stack Web Developer</h2>
             <p>He/Him</p>
             <DownArrowSvg
                 viewBox='0 0 100 100'

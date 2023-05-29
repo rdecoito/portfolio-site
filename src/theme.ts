@@ -5,7 +5,7 @@ import { Dispatch, SetStateAction } from 'react';
 const darkModeVars: Record<ThemeVarName, string> = {
     '--background-color': '#152028',
     '--text-color': 'rgba(255, 255, 255, 0.87)',
-    '--link-text-color': '#646cff',
+    '--link-text-color': '#a5c3ff',
     '--link-hover-color': '#535bf2',
     '--button-background-color': '#1a1a1a',
     '--navbar-color': '#172e33',
