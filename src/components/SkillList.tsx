@@ -10,14 +10,15 @@ const BadgeFlex = styled.div(({ theme }) => ({
 }));
 
 
-function BadgeList(props: { color?: string; names: string[]; }) {
-    const { color, names } = props;
+function BadgeList(props: { color?: string; text?: 'white' | 'black'; names: string[]; }) {
+    const { color, text, names } = props;
     return (
         <BadgeFlex>
             {names.map((name) => (
                 <Badge
                     key={name}
                     color={color}
+                    text={text}
                 >
                     {name}
                 </Badge>
@@ -29,16 +30,18 @@ function BadgeList(props: { color?: string; names: string[]; }) {
 interface SkillListProps {
     title: string;
     color: string;
+    text?: 'white' | 'black';
     skills: string[];
 }
 
 export function SkillList(props: SkillListProps) {
-    const { title, color, skills } = props;
+    const { title, color, text, skills } = props;
     return (
         <Card>
             {title}
             <BadgeList
                 color={color}
+                text={text}
                 names={skills}
             />
         </Card>

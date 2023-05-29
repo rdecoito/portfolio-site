@@ -42,7 +42,7 @@ export default function Projects() {
                         I wanted to demonstrate some basic ability with a well-scaffolded small project
                         utilizing TypeScript, Vite, and ESLint.
                     </p>
-                    <a href=''>Check out the code here!</a>
+                    <a href='https://github.com/rdecoito/portfolio-site'>Check out the code here!</a>
                 </ProjectCard>
                 <ProjectCard>
                     <ProjectImage

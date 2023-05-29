@@ -16,15 +16,15 @@ const darkModeVars: Record<ThemeVarName, string> = {
 };
 
 const lightModeVars: Record<ThemeVarName, string> = {
-    '--background-color': '#fff',
+    '--background-color': '#eee',
     '--text-color': '#213547',
     '--link-text-color': '#646cff',
     '--link-hover-color': '#747bff',
     '--button-background-color': '#1a1a1a',
-    '--navbar-color': 'grey',
+    '--navbar-color': '#222',
     '--default-badge-color': 'lightblue',
     '--shadow-color': 'rgba(0, 0, 0, 0.5)',
-    '--breadcrumb-color': 'grey',
+    '--breadcrumb-color': '#222',
     '--card-background': 'rgba(0, 0, 0, 0.07)',
 };
 

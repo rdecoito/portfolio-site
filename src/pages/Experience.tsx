@@ -67,6 +67,7 @@ export default function Experience() {
                     <SkillList
                         title='Frontend Technologies'
                         color='green'
+                        text='white'
                         skills={[
                             'React',
                             'JavaScript',
@@ -85,6 +86,7 @@ export default function Experience() {
                     <SkillList
                         title='Backend Technologies'
                         color='blue'
+                        text='white'
                         skills={[
                             'Java',
                             'Spring Boot',
@@ -99,6 +101,7 @@ export default function Experience() {
                     <SkillList
                         title='Other Skills'
                         color='brown'
+                        text='white'
                         skills={[
                             'Git',
                             'GitLab CI/CD',
@@ -128,6 +131,7 @@ export default function Experience() {
                     <SkillList
                         title='Frontend Technologies'
                         color='green'
+                        text='white'
                         skills={[
                             'Angular7',
                             'React',
@@ -139,6 +143,7 @@ export default function Experience() {
                     <SkillList
                         title='Backend Technologies'
                         color='blue'
+                        text='white'
                         skills={[
                             'Git',
                             'AWS',
@@ -165,6 +170,7 @@ export default function Experience() {
                     <SkillList
                         title='Technologies and Skills'
                         color='green'
+                        text='white'
                         skills={[
                             'C#',
                             'MySQL',
