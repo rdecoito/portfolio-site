@@ -29,9 +29,32 @@ export default function AboutMe() {
                 <InlineLogo margin='left' hideWhenScreenSmall />
             </h1>
             <p>
-                Hello! My name is Landon, and I&apos;m a software developer. I currently
-                live in northern Virginia with my wife and our two cats, but soon
-                we&apos;ll be moving to Vancouver, BC.
+                Hello! My name is Landon, and I&apos;m a full stack software developer
+                with a lot of experience collaborating at a high level, architecting
+                solutions for interesting problems, writing maintainable and extensible
+                code, and supporting software through documentation and issue tracking.
+            </p>
+            <p>
+                I currently live in Northern Virginia with my wife and our two cats,
+                but I will be traveling to Vancouver, Canada soon to follow my wife&apos;s
+                work transfer. I am looking for remote opportunities in software
+                development, especially full stack or frontend web development.
+            </p>
+            <p>
+                In my handful of years of experience in professional software development,
+                I have taken on a wide range of responsibility ranging from mentoring
+                summer interns to taking ownership of an entire project&apos;s frontend. I
+                have provided meaningful input on a variety of our project&apos;s technical
+                solutions ranging from the design of extensible architecture to the
+                {'>'}85% increased optimization of costly microservice operations to the
+                writing of technical documentation for both developer onboarding and
+                new feature spikes.
+            </p>
+            <p>
+                On the less professional side, some of my hobbies include hiking, playing
+                board games and TTRPGs, and programming! I have more Steam games than I
+                can play (though who doesn&apos;t), and I love bouncing between personal
+                projects when I get the opportunity.
             </p>
             <ImageGrid>
                 <HorizontalImg
@@ -50,9 +73,6 @@ export default function AboutMe() {
                     alt='One of our cats, Onyx, sitting on her cat bed with her tongue sticking out'
                 />
             </ImageGrid>
-            <p>
-                Some of my hobbies include hiking, playing board games and TTRPGs, and programming!
-            </p>
         </>
     );
 }
