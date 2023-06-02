@@ -31,7 +31,7 @@ export default function Projects() {
             <ProjectList>
                 <ProjectCard>
                     <PortfolioProjectLogo ariaShow />
-                    <h3>Portfolio Website</h3>
+                    <h2>Portfolio Website</h2>
                     <p>
                         The website you&apos;re looking at! I threw this together over a couple days
                         using React, and I had a good bit of fun with it.
@@ -49,14 +49,14 @@ export default function Projects() {
                         src='check_your_balance_logo.png'
                         alt='An intricate balance scale set upon a background which is black on the left half and white on the right half.'
                     />
-                    <h3>Check Your Balance</h3>
+                    <h2>Check Your Balance</h2>
                     <p>
                         This was a passion project that serves as a quick and easy way to track Player
                         Characters and Non-Player Characters in the tabletop roleplaying game
                         {' '}
                         <a href='https://magpiegames.com/pages/avatar-legends'>Avatar Legends</a>,
                         by Magpie Games. I used it myself for some of my games and was pleased with
-                        the results
+                        the results.
                     </p>
                     <p>
                         The unstated goal of the project was to get some experience

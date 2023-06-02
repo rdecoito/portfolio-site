@@ -10,6 +10,7 @@ declare module 'styled-components' {
         | '--default-badge-color'
         | '--shadow-color'
         | '--navbar-color'
+        | '--navbar-background-color'
         | '--breadcrumb-color'
         | '--card-background'
     ;

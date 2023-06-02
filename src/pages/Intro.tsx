@@ -25,7 +25,7 @@ const IntroBackground = styled.div`
     }
     >svg {
         opacity: 0;
-        animation: 2s 3.5s forwards ${fadeInKeyframe}, 5s 5.5s infinite ${bounceKeyframe};
+        animation: 1s 3s forwards ${fadeInKeyframe}, 3.5s 3.25s infinite ${bounceKeyframe};
     }
 `;
 

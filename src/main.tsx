@@ -4,9 +4,6 @@ import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
-        <>
-            <App />
-            <div style={{ height: '40vh' }}></div>
-        </>
+        <App />
     </React.StrictMode>
 );

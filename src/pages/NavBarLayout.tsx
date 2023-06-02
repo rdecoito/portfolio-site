@@ -2,10 +2,11 @@ import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import { InlineLogo } from '../components';
 import { PropsWithChildren } from 'react';
+import { Footer } from '../components/Footer';
 
 const NavBar = styled.nav(({ theme }) => ({
     width: '100vw',
-    backgroundColor: theme.color('--navbar-color'),
+    backgroundColor: theme.color('--navbar-background-color'),
     display: 'flex',
     position: 'fixed',
     top: 0,
@@ -29,7 +30,7 @@ const HomeLink = styled.a(({ theme }) => ({
 
 const ContentArea = styled.div({
     display: 'flex',
-    flexFlow: 'row nowrap',
+    flexFlow: 'column nowrap',
     justifyContent: 'center'
 });
 
@@ -47,6 +48,7 @@ export default function NavBarLayout({ children }: PropsWithChildren) {
             </NavBar>
             <ContentArea>
                 {children ? children : <Outlet />}
+                <Footer />
             </ContentArea>
         </>
     );
