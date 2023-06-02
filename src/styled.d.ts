@@ -9,7 +9,7 @@ declare module 'styled-components' {
         | '--button-background-color'
         | '--default-badge-color'
         | '--shadow-color'
-        | '--navbar-color'
+        | '--navbar-text-color'
         | '--navbar-background-color'
         | '--breadcrumb-color'
         | '--card-background'
