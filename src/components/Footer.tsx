@@ -5,7 +5,7 @@ const FooterBackground = styled.div(({ theme }) => ({
     marginTop: '20vh',
     textAlign: 'center',
     backgroundColor: theme.color('--navbar-background-color'),
-    color: theme.color('--navbar-color')
+    color: theme.color('--navbar-text-color')
 }));
 
 const MastodonLogo = styled.img(({ theme }) => ({
@@ -14,13 +14,20 @@ const MastodonLogo = styled.img(({ theme }) => ({
     margin: theme.padding(2),
 }));
 
+const HiddenSpan = styled.span({
+    position: 'absolute',
+    opacity: 0,
+    fontSize: 0,
+});
+
 export const Footer = () => {
     return (
         <FooterBackground>
             &copy; 2023 Landon DeCoito
             <br />
             <a href='https://mastodon.social/@LandoDev' rel='me'>
-                <MastodonLogo src='logo_purple.svg' />
+                <MastodonLogo src='mastodon_logo_purple.svg' alt='The Mastodon logo' />
+                <HiddenSpan>Mastodon</HiddenSpan>
             </a>
         </FooterBackground>
     );
