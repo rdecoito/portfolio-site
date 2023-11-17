@@ -35,10 +35,9 @@ export default function AboutMe() {
                 code, and supporting software through documentation and issue tracking.
             </p>
             <p>
-                I currently live in Northern Virginia with my wife and our two cats,
-                but I will be traveling to Vancouver, Canada soon to follow my wife&apos;s
-                work transfer. I am looking for remote opportunities in software
-                development, especially full stack or frontend web development.
+                I currently live in Northern Virginia with my wife and our two cats.
+                I am looking for remote opportunities in software development,
+                especially full stack or frontend web development.
             </p>
             <p>
                 In my handful of years of experience in professional software development,
