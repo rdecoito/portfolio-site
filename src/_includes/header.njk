@@ -1,9 +1,17 @@
 <header>
 	<nav>
 		<a href="/" class="button">
-			<img src="/assets/L_logo.png" class="textsize" />
-			Lando
+			<img src="/assets/L_logo.png" class="textsize" alt="A cursive letter L with a red accent stroke" />
+			Home
 		</a>
-		{# <a href="/board-game-shelf">Board Game Shelf</a> #}
+		<label class="hamburger-button button" for="nav-dropdown">
+			<span class="visually-hidden">Open Navigation</span>
+			<span class="nav-expand">=</span>
+			<span class="nav-close">X</span>
+			<input class="visually-hidden" type="checkbox" id="nav-dropdown" autocomplete="off"  />
+		</label>
+		<ul>
+			<li><a href="/boardgames/board-game-shelf">Board Games</a></li>
+		</ul>
 	</nav>
 </header>
