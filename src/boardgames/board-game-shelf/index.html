@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+boardgames:
+  - name: Coup
+    imgname: coup.jpg
+    bgglink: https://boardgamegeek.com/boardgame/131357/coup
+    description: Coup has always had a special place in my heart. I can't even remember where or when I first played it, but it must have been in late high school; regardless, I know I fell in love instantly. I remember in freshman year of college I wanted to play it with my friends in the dining hall but I realised I didn't have a copy. So I busted out some index cards and created my own deck! I crudely drew 3 copies of each of the 5 cards, cut out some currency tokens, and we got to playing. My friends and I had an absolute blast. I still have that crappy copy laying around here somewhere, but I did go out and get a real version for future use. I'll always love this game.
+  - name: Whirling Witchcraft
+    imgname: whirling-witchcraft.jpg
+    bgglink: https://boardgamegeek.com/boardgame/335275/whirling-witchcraft
+    description: Whirling Witchcraft has been a bit of a sleeper hit for us since we picked it up while visiting family in Seattle. We expected it to be a middling experience that was aesthetically amusing, but it turned out to be a really interesting lesson in player feedback loops. Every player plays their turn simultaneously by adding a new recipe card to their table and using the resources on their workbench to produce different resources. Then, those resources get sent to your neighbour, who uses them as inputs for their next turn. Your goal is to produce so many resources that your neighbour can't use them all fast enough and the overflow gets sent back to you as points. Really well-designed game that provides a lot of quick fun!
+  - name: Lovecraft Letter
+    imgname: lovecraft-letter.png
+    bgglink: https://boardgamegeek.com/boardgame/198740/lovecraft-letter
+  - name: Genotype
+    imgname: genotype.png
+    bgglink: https://boardgamegeek.com/boardgame/252752/genotype-a-mendelian-genetics-game
+  - name: Above and Below
+    imgname: above-and-below.jpg
+    bgglink: https://boardgamegeek.com/boardgame/172818/above-and-below
+  - name: Tokaido Duo
+    imgname: tokaido-duo.jpg
+    bgglink: https://boardgamegeek.com/boardgame/363183/tokaido-duo
+  - name: Wingspan
+    imgname: wingspan.jpg
+    bgglink: https://boardgamegeek.com/boardgame/266192/wingspan
+    description: My wife absolutely adores enginebuilders, so she was really excited to try this one. For my part, I am a complete sucker for games that go hard on a specific theme. Wingspan accomplishes both of these goals very well. I don't think I need to harp too much on this one, since you've likely heard of it before, but it suffices to say we quite enjoy our little bird sanctuaries.
+  - name: Dice Forge
+    imgname: dice-forge.jpg
+    bgglink: https://boardgamegeek.com/boardgame/194594/dice-forge
+  - name: Coup Rebellion
+    imgname: coup-rebellion.jpg
+    bgglink: https://boardgamegeek.com/boardgame/148943/coup-rebellion-g54
+  - name: Century Spice Road
+    imgname: century-spice-road.jpg
+    bgglink: https://boardgamegeek.com/boardgame/209685/century-spice-road
+  - name: Magic Maze
+    imgname: magic-maze.jpg
+    bgglink: https://boardgamegeek.com/boardgame/209778/magic-maze
+  - name: Paleo
+    imgname: paleo.jpg
+    bgglink: https://boardgamegeek.com/boardgame/300531/paleo
+  - name: 'Bloodborne: The Card Game'
+    imgname: bloodborne-the-card-game.jpg
+    bgglink: https://boardgamegeek.com/boardgame/195856/bloodborne-the-card-game
+  - name: Betrayal at House on the Hill
+    imgname: betrayal-at-house-on-the-hill.png
+    bgglink: https://boardgamegeek.com/boardgame/10547/betrayal-at-house-on-the-hill
+  - name: Ark Nova
+    imgname: ark-nova.jpg
+    bgglink: https://boardgamegeek.com/boardgame/342942/ark-nova
+  - name: 'The Binding of Isaac: Four Souls'
+    imgname: isaac-four-souls.jpg
+    bgglink: https://boardgamegeek.com/boardgame/255664/the-binding-of-isaac-four-souls
+  - name: Scott Pilgrim's Precious Little Card Game
+    imgname: scott-pilgrim.jpg
+    bgglink: https://boardgamegeek.com/boardgame/223518/scott-pilgrims-precious-little-card-game
+  - name: New Angeles
+    imgname: new-angeles.jpg
+    bgglink: https://boardgamegeek.com/boardgame/205716/new-angeles
+  - name: 'Dark Souls: The Card Game'
+    imgname: dark-souls-the-card-game.jpg
+    bgglink: https://boardgamegeek.com/boardgame/242667/dark-souls-the-card-game
+---
+
+<article>
+	<h1>My Board Game Shelf</h1>
+	<p>This list is <b>very</b> loosely ordered by number of times played. We do have more games than are displayed on this page, but not every game on our shelf was worth showing here.</p>
+	<ul class="bookcase">
+		{% for game in boardgames -%}
+			<li class="book">
+				<a href="#{{ game.name }}">
+					<img src="/assets/boardgames/{{ game.imgname }}" alt="{{ game.name }}">
+				</a>
+			</li>
+		{% endfor -%}
+	</ul>
+	<p>Images from BoardGameGeek - see links below</p>
+	{% for game in boardgames -%}
+		<article class="game-review">
+			<h1 id="{{ game.name }}">{{ game.name }}</h1>
+			<img src="/assets/boardgames/{{ game.imgname }}" alt="The front cover of {{ game.name }}">
+			{% if game.description -%}
+				<p>
+					{{ game.description }}
+				</p>
+      {% endif -%}
+			<p>
+				<a href="{{ game.bgglink }}">Board Game Geek</a>
+			</p>
+		</article>
+	{% endfor -%}
+</article>

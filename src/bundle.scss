@@ -1,3 +1,157 @@
+button, .button {
+	border-radius: 16px;
+	padding: 0.4em 0.8em;
+	background-color: var(--button-background-color);
+	color: var(--text-color);
+	&:hover {
+		filter: brightness(1.5);
+	}
+}
+
+h1 {
+	border-bottom: 3px solid var(--accent-color);
+	font-size: 2.2em;
+}
+
+h1, h2 {
+	&::before {
+		content: "";
+		content: "L" / "";
+		display: inline-block;
+		font-family: cursive;
+		width: 1em;
+		height: 1em;
+		color: var(--accent-color);
+		margin-right: 8px;
+	}
+}
+
+.bookcase {
+	--book-size: 8rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	padding: 1rem 1rem;
+	background-image: url("/assets/bookshelf-crop.jpg");
+	background-position: top;
+	background-repeat: repeat-y;
+	background-size: 100% calc(var(--book-size) + 2rem);
+}
+
+.book, .book * {
+	display: block;
+	height: var(--book-size);
+	object-fit: contain;
+}
+
+.game-review {
+	& img {
+		float: left;
+		height: 10em;
+		margin-right: 8px;
+		margin-bottom: 8px;
+	}
+	& p:last-of-type {
+		// display: block;
+		clear: left;
+	}
+}
+
+// =========================================================
+// ========== UTILITY ======================================
+// =========================================================
+
+.top-margin {
+	margin-top: 8px;
+}
+
+.project-logo {
+	height: 4rem;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+  }
+
+.card {
+	background-color: var(--card-background);
+	max-width: 30em;
+	border-radius: 8px;
+	padding: 0.6em;
+	box-shadow: 0 0 8px var(--shadow-color);
+	text-align: center;
+}
+
+.card-group {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.textsize {
+	height: 1em;
+}
+
+.textsize-2 {
+	height: 2em;
+}
+
+.textsize-3 {
+	height: 3em;
+}
+
+.textsize-4 {
+	height: 4em;
+}
+
+// =========================================================
+// ========== LAYOUT =======================================
+// =========================================================
+
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 1.1rem;
+    --background-color: #152028;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --link-text-color: #a5c3ff;
+    --link-hover-color: #aebfce;
+	--accent-color: rgb(239, 25, 3);
+    --button-background-color: #1a1a1a;
+    --navbar-background-color: #172e33;
+    --navbar-text-color: var(--text-color);
+    --default-badge-color: seagreen;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --breadcrumb-color: #172e33;
+    --card-background: rgba(150, 150, 150, 0.07);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background-color: #eee;
+		--text-color: #213547;
+		--link-text-color: #646cff;
+		--link-hover-color: #747bff;
+		--accent-color: red;
+		--button-background-color: #1a1a1a;
+		--navbar-background-color: #222;
+		--navbar-text-color: white;
+		--default-badge-color: lightblue;
+		--shadow-color: rgba(0, 0, 0, 0.5);
+		--breadcrumb-color: #222;
+		--card-background: rgba(0, 0, 0, 0.07);
+	}
+}
+
 body {
 	background-color: var(--background-color);
 	color: var(--text-color);
@@ -32,8 +186,59 @@ nav {
 	padding: 0.5em;
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
 	gap: 16px;
+	& a:first-of-type {
+		min-width: fit-content;
+	}
+	& ul {
+		display: inline-flex;
+		flex-flow: row nowrap;
+		overflow-x: auto;
+		gap: inherit;
+		list-style: none;
+		margin: 0;
+		padding: 8px 0;
+		& li {
+			min-width: fit-content;
+		}
+	}
+	& .hamburger-button:focus-within {
+		outline: 5px auto Highlight;
+		outline: 5px auto -webkit-focus-ring-color;
+	}
+	& .nav-expand {
+		display: inline-block;
+	}
+	& .nav-close {
+		display: none;
+	}
+	&:has(.hamburger-button input[type="checkbox"]:checked) .nav-expand {
+		display: none;
+	}
+	&:has(.hamburger-button input[type="checkbox"]:checked) .nav-close {
+		display: inline-block;
+	}
+	&:has(.hamburger-button input[type="checkbox"]:checked) ul {
+		flex-wrap: wrap;
+	}
+	&:has(.hamburger-button input[type="checkbox"]:checked) {
+		flex-wrap: wrap;
+	}
+}
+
+.hamburger-button {
+	display: none;
+	margin-left: auto;
+}
+
+@media screen and (max-width: 500px) {
+	nav:has(.hamburger-button input[type="checkbox"]:not(:checked)) ul {
+		display: none;
+	}
+
+	.hamburger-button {
+		display: unset;
+	}
 }
 
 main {
@@ -46,97 +251,4 @@ footer {
 	background-color: var(--navbar-background-color);
 	text-align: center;
 	padding: 0.5em;
-}
-
-button, .button {
-	border-radius: 16px;
-	padding: 0.4em 0.8em;
-	background-color: var(--button-background-color);
-	color: var(--text-color);
-	&:hover {
-		filter: brightness(1.5);
-	}
-}
-
-.top-margin {
-	margin-top: 8px;
-}
-
-.project-logo {
-	height: 4rem;
-}
-
-.card {
-	background-color: var(--card-background);
-	max-width: 30em;
-	border-radius: 8px;
-	padding: 0.6em;
-	box-shadow: 0 0 8px var(--shadow-color);
-	text-align: center;
-}
-
-.card-group {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-	gap: 8px;
-}
-
-.textsize {
-	height: 1em;
-}
-
-.textsize-2 {
-	height: 2em;
-}
-
-h1 {
-	border-bottom: 3px solid var(--accent-color);
-	font-size: 2.2em;
-}
-
-h1, h2 {
-	&::before {
-		content: "L";
-		display: inline-block;
-		font-family: cursive;
-		width: 1em;
-		height: 1em;
-		color: var(--accent-color);
-		margin-right: 8px;
-	}
-}
-
-:root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-    --background-color: #152028;
-    --text-color: rgba(255, 255, 255, 0.87);
-    --link-text-color: #a5c3ff;
-    --link-hover-color: #aebfce;
-	--accent-color: rgb(239, 25, 3);
-    --button-background-color: #1a1a1a;
-    --navbar-background-color: #172e33;
-    --navbar-text-color: var(--text-color);
-    --default-badge-color: seagreen;
-    --shadow-color: rgba(0, 0, 0, 0.5);
-    --breadcrumb-color: #172e33;
-    --card-background: rgba(150, 150, 150, 0.07);
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		--background-color: #eee;
-		--text-color: #213547;
-		--link-text-color: #646cff;
-		--link-hover-color: #747bff;
-		--accent-color: red;
-		--button-background-color: #1a1a1a;
-		--navbar-background-color: #222;
-		--navbar-text-color: white;
-		--default-badge-color: lightblue;
-		--shadow-color: rgba(0, 0, 0, 0.5);
-		--breadcrumb-color: #222;
-		--card-background: rgba(0, 0, 0, 0.07);
-	}
 }
