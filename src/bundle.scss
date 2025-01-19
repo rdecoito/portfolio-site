@@ -1,0 +1,142 @@
+body {
+	background-color: var(--background-color);
+	color: var(--text-color);
+	margin: 0;
+}
+
+a {
+	color: var(--link-text-color);
+	text-decoration: none;
+	font-weight: 500;
+	&:hover {
+		color: var(--link-hover-color);
+	}
+	>img {
+		transform: translateY(0.1em);
+	}
+}
+
+header {
+	color: var(--navbar-text-color);
+	background-color: var(--navbar-background-color);
+	min-height: 2em;
+}
+
+main, nav {
+	min-width: 300px;
+	max-width: min(50em, 100%);
+}
+
+nav {
+	margin: 0 auto;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+main {
+	margin: 2rem auto;
+	padding: 0 2rem;
+}
+
+footer {
+	color: var(--navbar-text-color);
+	background-color: var(--navbar-background-color);
+	text-align: center;
+	padding: 0.5em;
+}
+
+button, .button {
+	border-radius: 16px;
+	padding: 0.4em 0.8em;
+	background-color: var(--button-background-color);
+	color: var(--text-color);
+	&:hover {
+		filter: brightness(1.5);
+	}
+}
+
+.top-margin {
+	margin-top: 8px;
+}
+
+.project-logo {
+	height: 4rem;
+}
+
+.card {
+	background-color: var(--card-background);
+	max-width: 30em;
+	border-radius: 8px;
+	padding: 0.6em;
+	box-shadow: 0 0 8px var(--shadow-color);
+	text-align: center;
+}
+
+.card-group {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.textsize {
+	height: 1em;
+}
+
+.textsize-2 {
+	height: 2em;
+}
+
+h1 {
+	border-bottom: 3px solid var(--accent-color);
+	font-size: 2.2em;
+}
+
+h1, h2 {
+	&::before {
+		content: "L";
+		display: inline-block;
+		font-family: cursive;
+		width: 1em;
+		height: 1em;
+		color: var(--accent-color);
+		margin-right: 8px;
+	}
+}
+
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+    --background-color: #152028;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --link-text-color: #a5c3ff;
+    --link-hover-color: #aebfce;
+	--accent-color: rgb(239, 25, 3);
+    --button-background-color: #1a1a1a;
+    --navbar-background-color: #172e33;
+    --navbar-text-color: var(--text-color);
+    --default-badge-color: seagreen;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --breadcrumb-color: #172e33;
+    --card-background: rgba(150, 150, 150, 0.07);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background-color: #eee;
+		--text-color: #213547;
+		--link-text-color: #646cff;
+		--link-hover-color: #747bff;
+		--accent-color: red;
+		--button-background-color: #1a1a1a;
+		--navbar-background-color: #222;
+		--navbar-text-color: white;
+		--default-badge-color: lightblue;
+		--shadow-color: rgba(0, 0, 0, 0.5);
+		--breadcrumb-color: #222;
+		--card-background: rgba(0, 0, 0, 0.07);
+	}
+}
