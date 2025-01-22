@@ -70,7 +70,7 @@ boardgames:
 		{% for game in boardgames -%}
 			<li class="book">
 				<a href="#{{ game.name }}">
-					<img src="/assets/boardgames/{{ game.imgname }}" alt="{{ game.name }}">
+					<img src="/assets/boardgames/sm/{{ game.imgname }}" alt="{{ game.name }}">
 				</a>
 			</li>
 		{% endfor -%}
@@ -79,7 +79,7 @@ boardgames:
 	{% for game in boardgames -%}
 		<article class="game-review">
 			<h1 id="{{ game.name }}">{{ game.name }}</h1>
-			<img src="/assets/boardgames/{{ game.imgname }}" alt="The front cover of {{ game.name }}">
+			<img src="/assets/boardgames/sm/{{ game.imgname }}" alt="The front cover of {{ game.name }}">
 			{% if game.description -%}
 				<p>
 					{{ game.description }}
