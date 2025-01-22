@@ -1,0 +1,28 @@
+---
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+<h1>Lando's Blog</h1>
+
+<h2>Disclaimer</h2>
+
+<p>
+	I don't expect this blog will have any consistent theme or posting schedule,
+	but I wanted to have a sustainable catch-all place I could put my thoughts, musings, and learnings.
+	This is that place!
+</p>
+
+<h2>Recent Posts</h2>
+
+<ul class="blog-post-summary-list">
+	{% for post in posts -%}
+		<li>
+			<a href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | niceDate }}
+			{% excerpt post %}
+		</li>
+	{% endfor -%}
+</ul>

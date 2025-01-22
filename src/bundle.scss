@@ -2,10 +2,16 @@ button, .button {
 	border-radius: 16px;
 	padding: 0.4em 0.8em;
 	background-color: var(--button-background-color);
-	color: var(--text-color);
 	&:hover {
 		filter: brightness(1.5);
 	}
+}
+
+.inactive-button {
+	border-radius: 16px;
+	padding: 0.4em 0.8em;
+	background-color: var(--button-background-color);
+	color: var(--text-color);
 }
 
 h1 {
@@ -181,7 +187,7 @@ main, nav {
 	max-width: min(50em, 100%);
 }
 
-nav {
+header nav {
 	margin: 0 auto;
 	padding: 0.5em;
 	display: flex;
@@ -217,13 +223,23 @@ nav {
 	}
 	&:has(.hamburger-button input[type="checkbox"]:checked) .nav-close {
 		display: inline-block;
+		width: 100%;
 	}
 	&:has(.hamburger-button input[type="checkbox"]:checked) ul {
+		display: flex;
 		flex-wrap: wrap;
+		width: 100%;
+		padding-left: inherit;
+		padding-right: inherit;
 	}
 	&:has(.hamburger-button input[type="checkbox"]:checked) {
 		flex-wrap: wrap;
 	}
+}
+
+nav.pagination {
+	width: 100%;
+	text-align: center;
 }
 
 .hamburger-button {
