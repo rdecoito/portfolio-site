@@ -32,6 +32,38 @@ h1, h2 {
 	}
 }
 
+h3, h4, h5, h6 {
+	margin-top: 2em;
+}
+
+code {
+	// Adapted from https://css-tricks.com/styling-code-in-and-out-of-blocks/
+	color: black;
+	background: white;
+	word-wrap: break-word;
+	box-decoration-break: clone;
+	padding: .05rem 0.1rem;
+	border-radius: .2rem;
+}
+
+pre > code {
+	// Adapted from https://stackoverflow.com/questions/4000792/how-can-i-style-code-listings-using-css
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: black;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
 .bookcase {
 	--book-size: 8rem;
 	display: flex;
