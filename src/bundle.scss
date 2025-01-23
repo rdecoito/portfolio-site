@@ -32,6 +32,38 @@ h1, h2 {
 	}
 }
 
+h3, h4, h5, h6 {
+	margin-top: 2em;
+}
+
+code {
+	// Adapted from https://css-tricks.com/styling-code-in-and-out-of-blocks/
+	color: black;
+	background: white;
+	word-wrap: break-word;
+	box-decoration-break: clone;
+	padding: .05rem 0.1rem;
+	border-radius: .2rem;
+}
+
+pre > code {
+	// Adapted from https://stackoverflow.com/questions/4000792/how-can-i-style-code-listings-using-css
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: black;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
 .bookcase {
 	--book-size: 8rem;
 	display: flex;
@@ -129,8 +161,8 @@ h1, h2 {
 	font-size: 1.1rem;
     --background-color: #152028;
     --text-color: rgba(255, 255, 255, 0.87);
-    --link-text-color: #a5c3ff;
-    --link-hover-color: #aebfce;
+    --link-text-color: #747bff;
+    --link-hover-color: #424bee;
 	--accent-color: rgb(239, 25, 3);
     --button-background-color: #1a1a1a;
     --navbar-background-color: #172e33;
@@ -145,7 +177,7 @@ h1, h2 {
 	:root {
 		--background-color: #eee;
 		--text-color: #213547;
-		--link-text-color: #646cff;
+		--link-text-color: #222df8;
 		--link-hover-color: #747bff;
 		--accent-color: red;
 		--button-background-color: #1a1a1a;
@@ -173,6 +205,13 @@ a {
 	}
 	>img {
 		transform: translateY(0.1em);
+	}
+}
+
+header a, footer a {
+	color: lightskyblue;
+	&:hover {
+		color: cadetblue;
 	}
 }
 
