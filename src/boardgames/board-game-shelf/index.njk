@@ -64,30 +64,38 @@ boardgames:
 ---
 
 <article>
-	<h1>My Board Game Shelf</h1>
-	<p>This list is <b>very</b> loosely ordered by number of times played. We do have more games than are displayed on this page, but not every game on our shelf was worth showing here.</p>
-	<ul class="bookcase">
-		{% for game in boardgames -%}
-			<li class="book">
-				<a href="#{{ game.name }}">
-					<img src="/assets/boardgames/sm/{{ game.imgname }}" alt="{{ game.name }}">
-				</a>
-			</li>
-		{% endfor -%}
-	</ul>
-	<p>Images from BoardGameGeek - see links below</p>
-	{% for game in boardgames -%}
-		<article class="game-review">
-			<h1 id="{{ game.name }}">{{ game.name }}</h1>
-			<img src="/assets/boardgames/sm/{{ game.imgname }}" alt="The front cover of {{ game.name }}">
-			{% if game.description -%}
-				<p>
-					{{ game.description }}
-				</p>
-      {% endif -%}
-			<p>
-				<a href="{{ game.bgglink }}">Board Game Geek</a>
-			</p>
-		</article>
-	{% endfor -%}
+  <h1 id="top">My Board Game Shelf</h1>
+  <p>
+    This list is <strong>very</strong> loosely ordered by number of times played. We do have more games than are displayed on this
+    page, but not every game on our shelf was worth showing here.
+  </p>
+  <p class="info-box">
+    <i>Click on a game's cover to scroll to my thoughts on it.</i>
+  </p>
+  <ul class="bookcase">
+    {% for game in boardgames -%}
+    <li class="book">
+      <a href="#{{ game.name }}">
+        <img src="/assets/boardgames/sm/{{ game.imgname }}" alt="{{ game.name }}">
+      </a>
+    </li>
+    {% endfor -%}
+  </ul>
 </article>
+<p>Images from BoardGameGeek - see links below</p>
+{% for game in boardgames -%}
+<article class="game-review">
+  <h1 id="{{ game.name }}">{{ game.name }}</h1>
+  <img src="/assets/boardgames/sm/{{ game.imgname }}" alt="The front cover of {{ game.name }}">
+  {% if game.description -%}
+  <p>
+    {{ game.description }}
+  </p>
+  {% endif -%}
+  <p>
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+    |
+    <a href="{{ game.bgglink }}">Board Game Geek</a>
+  </p>
+</article>
+{% endfor -%}

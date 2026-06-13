@@ -121,17 +121,24 @@ pre > code {
 
 .card {
 	background-color: var(--card-background);
-	max-width: 30em;
+	width: 45%;
 	border-radius: 8px;
 	padding: 0.6em;
 	box-shadow: 0 0 8px var(--shadow-color);
 	text-align: center;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.card>*:last-child {
+	margin: auto;
 }
 
 .card-group {
 	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
+	flex-flow: row wrap;
+	align-items: stretch;
 	gap: 8px;
 }
 
@@ -150,6 +157,10 @@ pre > code {
 .textsize-4 {
 	height: 4em;
 }
+
+// .info-box {
+// 	background-color: 
+// }
 
 // =========================================================
 // ========== LAYOUT =======================================
@@ -175,8 +186,8 @@ pre > code {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--background-color: #eee;
-		--text-color: #213547;
+		--background-color: #FEF7FF;
+		--text-color: #1D1B20;
 		--link-text-color: #222df8;
 		--link-hover-color: #747bff;
 		--accent-color: red;
@@ -294,6 +305,10 @@ nav.pagination {
 	.hamburger-button {
 		display: unset;
 	}
+
+	.card {
+		width: 100%;
+	}
 }
 
 main {
@@ -301,7 +316,14 @@ main {
 	padding: 0 2rem;
 }
 
+.back-to-top {
+	padding: 0 0.25em;
+	border: 1px solid;
+	border-radius: 0.25em;
+}
+
 footer {
+	margin-top: auto;
 	color: var(--navbar-text-color);
 	background-color: var(--navbar-background-color);
 	text-align: center;
