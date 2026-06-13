@@ -1,5 +1,8 @@
 import * as sass from 'sass';
 
+/**
+ * @param {module:@11ty/eleventy/UserConfig} eleventyConfig
+ */
 export default function(eleventyConfig) {
 	eleventyConfig.setInputDirectory('src');
 
@@ -25,6 +28,13 @@ export default function(eleventyConfig) {
 		return post.templateContent;
 	})
 
+	eleventyConfig.addShortcode('extAnchor', function (link, text, attrs) {
+		if (!link || typeof link !== 'string') throw new Error(`Cannot create external anchor with no link. Received: [${link}]`);
+		if (text != null && typeof text !== 'string') throw new Error(`External anchor text must be nullish or a string. Received: [${text}]`)
+		if (attrs != null && typeof attrs !== 'string') throw new Error(`External anchor attrs must be nullish or a string. Received: [${attrs}]`)
+		return `<a href="${link}" rel="noreferrer"${attrs ? ' ' + attrs : ''}>${text ?? link}</a>`
+	})
+
 	eleventyConfig.addCollection('categories', function (collectionApi) {
 		let categories = new Set();
 		const posts = collectionApi.getFilteredByTag('post');
@@ -45,5 +55,11 @@ export default function(eleventyConfig) {
 	eleventyConfig.addFilter("niceDate", function(d) {
 		return english.format(new Date(d));
 	});
-	
+
+	eleventyConfig.addTransform("anchor-noreferrer-injection", async function (content) {
+		if (!(this.page.outputPath || "").endsWith('.html')) return content;
+		if (typeof content !== 'string') return content;
+
+		return content.replaceAll('<a href="https://', '<a rel="noreferrer" href="https://');
+	})
 }

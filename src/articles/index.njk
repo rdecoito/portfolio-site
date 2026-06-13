@@ -1,0 +1,68 @@
+---
+layout: layouts/base.njk
+articles:
+- name: If Not React, Then What?
+  author: Alex Russell
+  link: https://infrequently.org/2024/11/if-not-react-then-what/
+  tags: [web dev, tech, react]
+  comments: As a long-time React developer, this one gave me a lot to chew on. I still regularly use React, for various practical reasons, but I keep all of these points in mind when I start new projects. In particular, I avoid using React for any personal projects, and I hope to get skilled enough to easily use non-React frameworks for work projects as well.
+- name: HTML for people
+  author: Blake Watson
+  link: https://htmlforpeople.com/
+  tags: [web dev, tech]
+  comments: I've had this stashed away for a long time because it seems incredibly useful to a certain group of people. I haven't read much of it, but the idea of a tutorial for making a static website for people with no coding experience is amazing, and I want to keep this on hand to give to someone some day.
+- name: I Will Fucking Piledrive You If You Mention AI Again
+  author: Ludic
+  link: https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/
+  tags: [tech, ai]
+  comments: A hilarious, cathartic tirade filled to the brim with anecdotes, arguments, and emotion about how annoying the AI hype is. And this was published mid-2024. Still a classic.
+- name: Tim Berners-Lee Invented the World Wide Web. Now He Wants to Save It
+  author: Julian Lucas, The New Yorker
+  link: https://www.newyorker.com/magazine/2025/10/06/tim-berners-lee-invented-the-world-wide-web-now-he-wants-to-save-it
+  tags: [tech]
+  comments: I haven't actually fully read this one yet, but I do want to come back and finish it, and so far it's a really fascinating profile of a man who has impacted every one of our lives.
+- name: When ChatGPT summarises, it actually does nothing of the kind
+  author: Gerben Wierda
+  link: https://ea.rna.nl/2024/05/27/when-chatgpt-summarises-it-actually-does-nothing-of-the-kind/
+  tags: [tech, ai]
+  comments: 'I loved this piece when I first read it because it made me recontextualize something I had kinda taken for granted: the idea of LLMs being capable of summarizing. I knew, intuitively, that LLMs are broadly bad at summarizing (or are at least not trustworthy at it). This post really put into words WHY that is and provides some great examples of this failure in action.'
+- name: If you thought the speed of writing code was your problem - you have bigger problems
+  author: Andrew Murphy
+  tags: [tech, ai]
+  comments: 'Great piece on a major pitfall of AI hype: assuming that coding speed is your bottleneck. I think the points Murphy raises about QA and internal procedure are really critical for most software organizations and especially those trying to solve all their problems with AI.'
+---
+
+<h1>Articles</h1>
+<p>
+  This is a list of articles I've read that I really like and might want to share with others in the future.
+  Traditionally, I've stored these links by keeping them open in tabs in my phone's Firefox browser. That is...
+  inefficient. So I'm dumping them here.
+</p>
+{% for article in articles -%}
+  <article class="article-review">
+    <h2 id="{{ article.name }}">
+      {{ article.name }}
+    </h2>
+    <p>
+      <i>
+        By {{ article.author }}
+      </i>
+      <br/>
+      <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+      |
+      <a href="{{ article.link }}">Read it here</a>
+      {# {% if article.tags and article.tags.length -%}
+        <br/>TAGS:
+        {% for tag in article.tags -%}
+          <a href='/articles/tags/{{ tag }}'>{{ tag }}</a>
+          {{ ", " if loop.index < article.tags.length }}
+        {% endfor -%}
+      {% endif -%} #}
+    </p>
+    {% if article.comments -%}
+      <p>
+        {{ article.comments }}
+      </p>
+    {% endif -%}
+  </article>
+{% endfor -%}

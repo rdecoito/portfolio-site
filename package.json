@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve --port 3000"
   },
   "author": "",
   "license": "ISC",
